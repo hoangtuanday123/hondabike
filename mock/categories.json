@@ -1,0 +1,42 @@
+[
+  {
+    "id": "coffee",
+    "name": "Ưu đãi",
+    "icon": "../images/category/uudai.svg"
+  },
+  {
+    "id": "matcha",
+    "name": "Đặt lịch",
+    "icon": "../images/category/datlich.svg"
+  },
+  {
+    "id": "food",
+    "name": "Đặt hàng",
+    "icon": "../images/category/dathang.svg"
+  },
+  {
+    "id": "milktea",
+    "name": "Liên hệ",
+    "icon": "../images/category/lienhe.svg"
+  },
+  {
+    "id": "drinks",
+    "name": "Đổi thưởng",
+    "icon": "../images/category/doithuong.svg"
+  },
+  {
+    "id": "bread",
+    "name": "Thành Viên ",
+    "icon": "../images/category/thanhvien.svg"
+  },
+  {
+    "id": "juice",
+    "name": "Tin Tức",
+    "icon": "../images/category/tintuc.svg"
+  },
+  {
+    "id": "history",
+    "name": "Lịch sử",
+    "icon": "../images/category/lichsu.svg"
+  }
+]
