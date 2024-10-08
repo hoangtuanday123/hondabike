@@ -1,36 +1,36 @@
 [
   {
-    "id": "coffee",
+    "id": "promotion",
     "name": "Ưu đãi",
     "icon": "../images/category/uudai.svg"
   },
   {
-    "id": "matcha",
+    "id": "booking_time",
     "name": "Đặt lịch",
     "icon": "../images/category/datlich.svg"
   },
   {
-    "id": "food",
+    "id": "order",
     "name": "Đặt hàng",
     "icon": "../images/category/dathang.svg"
   },
   {
-    "id": "milktea",
+    "id": "contact",
     "name": "Liên hệ",
     "icon": "../images/category/lienhe.svg"
   },
   {
-    "id": "drinks",
+    "id": "exchange_rewards",
     "name": "Đổi thưởng",
     "icon": "../images/category/doithuong.svg"
   },
   {
-    "id": "bread",
+    "id": "member",
     "name": "Thành Viên ",
     "icon": "../images/category/thanhvien.svg"
   },
   {
-    "id": "juice",
+    "id": "news",
     "name": "Tin Tức",
     "icon": "../images/category/tintuc.svg"
   },

@@ -1,0 +1,28 @@
+[
+    {
+      "id": 1,
+      "name": "exciter150",
+      "price": 35000,
+      "image": "https://stc-zmp.zadn.vn/templates/zaui-coffee/dummy/product-square-1.webp",
+      "description": "There is a set of mock banners available here in three colours and in a range of standard banner sizes",
+      "promotion":""
+      
+    },
+    {
+      "id": 2,
+      "name": "exciter155",
+      "price": 45000,
+      "image": "https://stc-zmp.zadn.vn/templates/zaui-coffee/dummy/product-square-2.webp",
+      "description": "There is a set of mock banners available here in three colours and in a range of standard banner sizes",
+      "promotion":""
+    },
+    {
+      "id": 3,
+      "name": "honda",
+      "price": 30000,
+      "image": "https://stc-zmp.zadn.vn/templates/zaui-coffee/dummy/product-square-3.webp",
+      "description": "There is a set of mock banners available here in three colours and in a range of standard banner sizes",
+      "promotion":""
+    }
+  ]
+  

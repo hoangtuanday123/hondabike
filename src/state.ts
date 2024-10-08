@@ -1,15 +1,19 @@
 import { atom, selector, selectorFamily } from "recoil";
 import { getLocation, getPhoneNumber, getUserInfo } from "zmp-sdk";
-import logo from "static/logo.png";
-import { Category } from "types/category";
-import { Product, Variant } from "types/product";
-import { Cart } from "types/cart";
-import { Notification } from "types/notification";
-import { calculateDistance } from "utils/location";
-import { Store } from "types/delivery";
-import { calcFinalPrice } from "utils/product";
-import { wait } from "utils/async";
+import logo from "./static/logo.png";
+import { Category } from "./types/category";
+import { Product, Variant,Bike } from "./types/product";
+import { Cart } from "./types/cart";
+import { Notification } from "./types/notification";
+import { calculateDistance } from "./utils/location";
+import { Store } from "./types/delivery";
+import { Promotion } from "./types/promtion";
+import { calcFinalPrice } from "./utils/product";
+import { wait } from "./utils/async";
 import categories from "../mock/categories.json";
+import promotions from "../mock/promotions.json";
+import bikes from "../mock/bike.json";
+import notifications from "../mock/notification.json"
 
 export const userState = selector({
   key: "user",
@@ -31,6 +35,26 @@ export const categoriesState = selector<Category[]>({
   key: "categories",
   get: () => categories,
 });
+
+export const PromotionsState = selector<Promotion[]>({
+  key: "promotions",
+  get: () => promotions,
+});
+
+export const NotificationsState = selector<Notification[]>({
+  key: "notifications",
+  get: () => notifications,
+});
+
+export const bikesState = selector<Bike[]>({
+  key: "bikes",
+  get: async () => {
+    await wait(2000);
+    const products = (await import("../mock/bike.json")).default;
+    return products
+  },
+});
+
 
 export const productsState = selector<Product[]>({
   key: "products",
@@ -101,28 +125,43 @@ export const totalPriceState = selector({
   },
 });
 
-export const notificationsState = atom<Notification[]>({
-  key: "notifications",
-  default: [
-    {
-      id: 1,
-      image: logo,
-      title: "Chào bạn mới",
-      content:
-        "Cảm ơn đã sử dụng ZaUI Coffee, bạn có thể dùng ứng dụng này để tiết kiệm thời gian xây dựng",
-    },
-    {
-      id: 2,
-      image: logo,
-      title: "Giảm 50% lần đầu mua hàng",
-      content: "Nhập WELCOME để được giảm 50% giá trị đơn hàng đầu tiên order",
-    },
-  ],
-});
+// export const notificationsState = atom<Notification[]>({
+//   key: "notifications",
+//   default: [
+//     {
+//       id: 1,
+//       image: logo,
+//       title: "Chào bạn mới",
+//       content:
+//         "Cảm ơn đã sử dụng ZaUI Coffee, bạn có thể dùng ứng dụng này để tiết kiệm thời gian xây dựng",
+//     },
+//     {
+//       id: 2,
+//       image: logo,
+//       title: "Giảm 50% lần đầu mua hàng",
+//       content: "Nhập WELCOME để được giảm 50% giá trị đơn hàng đầu tiên order",
+//     },
+//   ],
+// });
 
 export const keywordState = atom({
   key: "keyword",
   default: "",
+});
+
+export const resultbikeState = selector<Bike[]>({
+  key: "resultbike",
+  get: async ({ get }) => {
+    const keyword = get(keywordState);
+    if (!keyword.trim()) {
+      return [];
+    }
+    const bikes = get(bikesState);
+    await wait(500);
+    return bikes.filter((bike) =>
+      bike.name.trim().toLowerCase().includes(keyword.trim().toLowerCase())
+    );
+  },
 });
 
 export const resultState = selector<Product[]>({

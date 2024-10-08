@@ -7,8 +7,8 @@ export const Inquiry: FC = () => {
   return (
     <Box p={4} className="bg-white">
       <Input.Search
-        onFocus={() => navigate("/search")}
-        placeholder="Tìm nhanh xe"
+        onFocus={() => navigate("/search_bike")}
+        placeholder="Tìm nhanh xe ..."
       />
     </Box>
   );

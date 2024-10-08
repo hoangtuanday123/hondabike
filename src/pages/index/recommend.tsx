@@ -1,12 +1,12 @@
-import { FinalPrice } from "components/display/final-price";
-import { DisplayPrice } from "components/display/price";
-import { ProductPicker } from "components/product/picker";
-import { Section } from "components/section";
-import { ProductSlideSkeleton } from "components/skeletons";
+import { FinalPrice } from "../../components/display/final-price";
+import { DisplayPrice } from "../../components/display/price";
+import { ProductPicker } from "../../components/product/picker";
+import { Section } from "../../components/section";
+import { ProductSlideSkeleton } from "../../components/skeletons";
 import React, { Suspense } from "react";
 import { FC } from "react";
 import { useRecoilValue } from "recoil";
-import { recommendProductsState } from "state";
+import { recommendProductsState } from "../../state";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Box, Text } from "zmp-ui";
 

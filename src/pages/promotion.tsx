@@ -1,46 +1,47 @@
 import React, { FC } from "react";
 import { ListRenderer } from "../components/list-renderer";
 import { useRecoilValue } from "recoil";
-import { NotificationsState } from "../state";
+import { PromotionsState } from "../state";
 import { Box, Header, Page, Text } from "zmp-ui";
 import { Divider } from "../components/divider";
-import { NotificationPicker } from "../components/notification/picker";
+import { PromotionPicker } from "../components/promotion/picker";
 import logo from "../static/logo.png"
-const NotificationList: FC = () => {
-  const notifications = useRecoilValue(NotificationsState);
+const PromotionList: FC = () => {
+  const promotions = useRecoilValue(PromotionsState);
+
   return (
     <Box className="bg-background">
       <ListRenderer
         noDivider
-        items={notifications}
-        renderLeft={(item) => (
-          <img className="w-10 h-10 rounded-full" src={logo} />
+        items={promotions}
+        renderLeft={() => (
+          <img className="w-10 h-10 rounded-full" src={logo} alt="Promotion Logo" />
         )}
         renderRight={(item) => (
-          <NotificationPicker notification={item}>
+          <PromotionPicker promotion={item}>
             {({ open }) => (
               <Box key={item.id} onClick={open} className="cursor-pointer">
                 <Text.Header>{item.title}</Text.Header>
                 <Text size="small" className="text-gray">
-                  {item.description}  {/* Đảm bảo item có thuộc tính description */}
+                  {item.discount_value}
                 </Text>
               </Box>
             )}
-          </NotificationPicker>
+          </PromotionPicker>
         )}
       />
     </Box>
   );
 };
-
-const NotificationPage: FC = () => {
+const PromotionPage: FC = () => {
   return (
     <Page>
-      <Header title="Thông báo" showBackIcon={false} />
+      <Header title="Ưu đãi" showBackIcon={false} />
       <Divider />
-      <NotificationList />
+      <PromotionList />
     </Page>
   );
 };
 
-export default NotificationPage;
+export default PromotionPage;
+

@@ -20,9 +20,10 @@ const SearchResultContent: FC = () => {
               {({ open }) => (
                 <div onClick={open} className="flex items-center space-x-4">
                   <img
-                    className="w-[88px] h-[88px] rounded-lg"
-                    src={product.image}
-                  />
+              loading="lazy"
+              src={bike.image}
+              className="absolute left-0 right-0 top-0 bottom-0 w-full h-full object-cover object-center rounded-lg bg-skeleton"
+            />
                   <Box className="space-y-2">
                     <Text>{product.name}</Text>
                     <Text size="xSmall" className="text-gray">

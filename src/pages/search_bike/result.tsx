@@ -1,13 +1,13 @@
 import { FinalPrice } from "../../components/display/final-price";
-import { ProductPicker } from "../../components/product/picker";
+import { BikePicker } from "../../components/product/bike_picker";
 import { ProductSearchResultSkeleton } from "../../components/skeletons";
 import React, { FC, Suspense } from "react";
 import { useRecoilValue } from "recoil";
-import { resultState } from "../../state";
+import { resultbikeState } from "../../state";
 import { Box, Text } from "zmp-ui";
 
 const SearchResultContent: FC = () => {
-  const result = useRecoilValue(resultState);
+  const result = useRecoilValue(resultbikeState);
   return (
     <Box flex flexDirection="column" className="bg-background flex-1 min-h-0">
       <Text.Title className="p-4 pt-0" size="small">
@@ -15,23 +15,23 @@ const SearchResultContent: FC = () => {
       </Text.Title>
       {result.length > 0 ? (
         <Box className="p-4 pt-0 space-y-4 flex-1 overflow-y-auto">
-          {result.map((product) => (
-            <ProductPicker key={product.id} product={product}>
+          {result.map((bike) => (
+            <BikePicker key={bike.id} bike={bike}>
               {({ open }) => (
-                <div onClick={open} className="flex items-center space-x-4">
-                  <img
-                    className="w-[88px] h-[88px] rounded-lg"
-                    src={product.image}
-                  />
+                <div className="flex items-center space-x-4" onClick={open}>
+                  
+                    <img
+                      className="w-[88px] h-[88px] rounded-lg"
+                      src={bike.image}
+                    />
                   <Box className="space-y-2">
-                    <Text>{product.name}</Text>
-                    <Text size="xSmall" className="text-gray">
-                      <FinalPrice>{product}</FinalPrice>
-                    </Text>
+                  <Text>{bike.name}</Text>
+
+                  <Text size="xxSmall" className="text-gray pb-2">Giá: {bike.price.toLocaleString()} VNĐ</Text>
                   </Box>
                 </div>
               )}
-            </ProductPicker>
+            </BikePicker>
           ))}
         </Box>
       ) : (

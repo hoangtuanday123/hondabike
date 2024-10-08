@@ -2,16 +2,19 @@ import React, { FC } from "react";
 import { Route, Routes } from "react-router";
 import { Box } from "zmp-ui";
 import { Navigation } from "./navigation";
-import HomePage from "pages/index";
-import CategoryPage from "pages/category";
-import CartPage from "pages/cart";
-import NotificationPage from "pages/notification";
-import ProfilePage from "pages/profile";
-import SearchPage from "pages/search";
-import CheckoutResultPage from "pages/result";
+import HomePage from "../pages/index";
+import CategoryPage from "../pages/category";
+import CartPage from "../pages/cart";
+import NotificationPage from "../pages/notification";
+import ProfilePage from "../pages/profile";
+import SearchPage from "../pages/search";
+import SearchbikePage from "../pages/search_bike";
+import CheckoutResultPage from "../pages/result";
+import PromotionPage from "../pages/promotion"
+import OrderPage from "../pages/order"
 import { getSystemInfo } from "zmp-sdk";
 import { ScrollRestoration } from "./scroll-restoration";
-import { useHandlePayment } from "hooks";
+import { useHandlePayment } from "../hooks";
 
 if (import.meta.env.DEV) {
   document.body.style.setProperty("--zaui-safe-area-inset-top", "24px");
@@ -40,6 +43,9 @@ export const Layout: FC = () => {
           <Route path="/cart" element={<CartPage />}></Route>
           <Route path="/profile" element={<ProfilePage />}></Route>
           <Route path="/result" element={<CheckoutResultPage />}></Route>
+          <Route path="/promotion" element={<PromotionPage />}></Route>
+          <Route path="/order" element={<OrderPage />}></Route>
+          <Route path="/search_bike" element={<SearchbikePage />}></Route>
         </Routes>
       </Box>
       <Navigation />

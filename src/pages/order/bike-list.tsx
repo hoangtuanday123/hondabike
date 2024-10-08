@@ -1,32 +1,32 @@
 import React, { FC, Suspense } from "react";
 import { Section } from "../../components/section";
 import { useRecoilValue } from "recoil";
-import { productsState } from "../../state";
+import { bikesState } from "../../state";
 import { Box } from "zmp-ui";
-import { ProductItem } from "../../components/product/item";
+import { BikeItem } from "../../components/product/bike_item";
 import { ProductItemSkeleton } from "../../components/skeletons";
 
-export const ProductListContent: FC = () => {
-  const products = useRecoilValue(productsState);
+export const BikeListContent: FC = () => {
+  const bikes = useRecoilValue(bikesState);
 
   return (
     <Section title="Danh sách sản phẩm">
       <Box className="grid grid-cols-2 gap-4">
-        {products.map((product) => (
-          <ProductItem key={product.id} product={product} />
+        {bikes.map((bike) => (
+          <BikeItem key={bike.id} bike={bike} />
         ))}
       </Box>
     </Section>
   );
 };
 
-export const ProductListFallback: FC = () => {
-  const products = [...new Array(12)];
+export const BikeListFallback: FC = () => {
+  const bikes = [...new Array(12)];
 
   return (
     <Section title="Danh sách sản phẩm">
       <Box className="grid grid-cols-2 gap-4">
-        {products.map((_, i) => (
+        {bikes.map((_, i) => (
           <ProductItemSkeleton key={i} />
         ))}
       </Box>
@@ -34,10 +34,10 @@ export const ProductListFallback: FC = () => {
   );
 };
 
-export const ProductList: FC = () => {
+export const BikeList: FC = () => {
   return (
-    <Suspense fallback={<ProductListFallback />}>
-      <ProductListContent />
+    <Suspense fallback={<BikeListFallback />}>
+      <BikeListContent />
     </Suspense>
   );
 };

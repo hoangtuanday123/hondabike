@@ -44,3 +44,14 @@ export interface Product {
   sale?: Sale;
   variants?: Variant[];
 }
+
+
+export interface Bike {
+  id: number;
+  name: string;
+  image: string;
+  price: number;
+  description: string;
+  promotion:string
+  
+}
