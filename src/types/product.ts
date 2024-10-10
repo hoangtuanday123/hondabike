@@ -55,3 +55,27 @@ export interface Bike {
   promotion:string
   
 }
+
+export interface News {
+  id: number;
+  title: string;
+  image: string;
+  description: string;
+  create_date:string
+  
+}
+
+export interface Branch {
+  id: number;
+  name: string;
+  image: string;
+  address: string;
+}
+
+export interface Service {
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+  detail: string;
+}

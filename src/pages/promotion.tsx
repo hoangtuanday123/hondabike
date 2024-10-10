@@ -36,7 +36,7 @@ const PromotionList: FC = () => {
 const PromotionPage: FC = () => {
   return (
     <Page>
-      <Header title="Ưu đãi" showBackIcon={false} />
+      <Header title="Ưu đãi" />
       <Divider />
       <PromotionList />
     </Page>

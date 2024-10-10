@@ -32,7 +32,7 @@ export const PromotionPicker: FC<PromotionPickerProps> = ({ children, promotion 
       {createPortal(
         <Sheet visible={visible} onClose={() => setVisible(false)} autoHeight>
           {promotion && (
-            <Box className="space-y-6 mt-2" p={4}>
+            <Box className="space-y-6 mt-2 overflow-auto" p={4}>
               <Box className="space-y-2">
                 <Text.Title>{promotion.title}</Text.Title>
                 <Text>{promotion.description}</Text>

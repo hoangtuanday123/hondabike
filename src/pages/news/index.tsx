@@ -5,25 +5,23 @@ import { Inquiry } from "./inquiry";
 // import { Banner } from "./banner";
 // import { Categories } from "./categories";
 // import { Recommend } from "./recommend";
-import { BikeList } from "./bike-list";
+import { NewsList } from "./news_list";
 import { Divider } from "../../components/divider";
 
 const OrderPage: React.FunctionComponent = () => {
   return (
     <Page className="relative flex-1 flex flex-col bg-white">
-     <Header title="Danh sách sản phẩm"/>
+     <Header title="Tin Tức"/>
       <Box className="flex-1 overflow-auto">
-      
         <Inquiry />
        
         <Suspense>
           
         </Suspense>
-        
         <Divider />
         
         <Divider />
-        <BikeList />
+        <NewsList />
         <Divider />
       </Box>
     </Page>

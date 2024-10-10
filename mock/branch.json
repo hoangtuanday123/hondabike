@@ -1,0 +1,20 @@
+[
+    {
+        "id":1,
+        "name":"chi nhánh 1",
+        "image":"https://stc-zmp.zadn.vn/templates/zaui-coffee/dummy/product-square-1.webp",
+        "address":"địa chỉ 1"
+    },
+    {
+        "id":2,
+        "name":"chi nhánh 2",
+        "image":"https://stc-zmp.zadn.vn/templates/zaui-coffee/dummy/product-square-1.webp",
+        "address":"địa chỉ 2"
+    },
+    {
+        "id":3,
+        "name":"chi nhánh 3",
+        "image":"https://stc-zmp.zadn.vn/templates/zaui-coffee/dummy/product-square-1.webp",
+        "address":"địa chỉ 3"
+    }
+]

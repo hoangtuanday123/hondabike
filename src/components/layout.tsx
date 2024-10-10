@@ -9,9 +9,14 @@ import NotificationPage from "../pages/notification";
 import ProfilePage from "../pages/profile";
 import SearchPage from "../pages/search";
 import SearchbikePage from "../pages/search_bike";
+import SearchnewsPage from "../pages/search_news"
 import CheckoutResultPage from "../pages/result";
 import PromotionPage from "../pages/promotion"
 import OrderPage from "../pages/order"
+import NewPage from "../pages/news"
+import Bookingtime from "../pages/bookingtime"
+import BookingPage from "../pages/booking";
+import ServicePage from "../pages/service"
 import { getSystemInfo } from "zmp-sdk";
 import { ScrollRestoration } from "./scroll-restoration";
 import { useHandlePayment } from "../hooks";
@@ -46,6 +51,11 @@ export const Layout: FC = () => {
           <Route path="/promotion" element={<PromotionPage />}></Route>
           <Route path="/order" element={<OrderPage />}></Route>
           <Route path="/search_bike" element={<SearchbikePage />}></Route>
+          <Route path="/news" element={<NewPage />}></Route>
+          <Route path="/search_news" element={<SearchnewsPage />}></Route>
+          <Route path="/booking_time" element={<Bookingtime />}></Route>
+          <Route path="/booking/branch" element={<BookingPage />}></Route>
+          <Route path="/booking/branch/:id/services" element={<ServicePage />}></Route>
         </Routes>
       </Box>
       <Navigation />

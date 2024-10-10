@@ -116,7 +116,7 @@ export const ProductPicker: FC<ProductPickerProps> = ({
       {createPortal(
         <Sheet visible={visible} onClose={() => setVisible(false)} autoHeight>
           {product && (
-            <Box className="space-y-6 mt-2" p={4}>
+            <Box className="space-y-6 mt-2 overflow-auto" p={4}>
               <Box className="space-y-2">
                 <Text.Title>{product.name}</Text.Title>
                 <Text>

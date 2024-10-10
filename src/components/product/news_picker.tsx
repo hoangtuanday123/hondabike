@@ -3,22 +3,21 @@ import { createPortal } from "react-dom";
 import { Sheet } from "../../components/fullscreen-sheet";
 import { Box, Button, Text } from "zmp-ui";
 
-export interface Bike {
+export interface News {
     id: number;
-    name: string;
+    title: string;
     image: string;
-    price: number;
     description: string;
-    promotion:string
+    create_date:string
     
   }
 
-export interface BikePickerProps {
-  bike: Bike;
+export interface NewsPickerProps {
+  news: News;
   children: (methods: { open: () => void; close: () => void }) => React.ReactNode;
 }
 
-export const BikePicker: FC<BikePickerProps> = ({ children, bike }) => {
+export const NewsPicker: FC<NewsPickerProps> = ({ children, news }) => {
   const [visible, setVisible] = useState(false);
 
   return (
@@ -29,21 +28,17 @@ export const BikePicker: FC<BikePickerProps> = ({ children, bike }) => {
       })}
       {createPortal(
         <Sheet visible={visible} onClose={() => setVisible(false)} autoHeight>
-          {bike && (
+          {news && (
             <Box className="space-y-6 mt-2 overflow-auto" p={4}>
               <Box className="space-y-2">
-                <Text.Title>{bike.name}</Text.Title>
-                <Text>Mô tả: {bike.description}</Text>
-                <Text>Giá: {bike.price.toLocaleString()} VNĐ</Text>
-                {bike.promotion && (
-                  <Text>
-                    Khuyến mãi: {bike.promotion}
-                  </Text>
-                )}
+                <Text.Title>{news.title}</Text.Title>
+                <Text>{news.create_date}</Text>
+                <Text>Mô tả: {news.description}</Text>
+               
                 
               </Box>
               <Box className="space-y-5">
-              <img src={bike.image} alt={bike.name} style={{ width: "100%", borderRadius: "8px" }} />
+              <img src={news.image} alt={news.title} style={{ width: "100%", borderRadius: "8px" }} />
                 <Button variant="primary" type="highlight" fullWidth onClick={() => setVisible(false)}>
                   Chọn
                 </Button>

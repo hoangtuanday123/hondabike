@@ -1,0 +1,26 @@
+[
+    {
+      "id": 1,
+      "title": "tin tức 1",
+      "image": "https://stc-zmp.zadn.vn/templates/zaui-coffee/dummy/product-square-1.webp",
+      "description": "There is a set of mock banners available here in three colours and in a range of standard banner sizes",
+      "create_date":"2024-9-01T00:00:00Z"
+      
+    },
+    {
+      "id": 2,
+      "title": "tin tức 2",
+   
+      "image": "https://stc-zmp.zadn.vn/templates/zaui-coffee/dummy/product-square-2.webp",
+      "description": "There is a set of mock banners available here in three colours and in a range of standard banner sizes",
+      "create_date":"2024-9-01T00:00:00Z"
+    },
+    {
+      "id": 3,
+      "title": "tin tức 3",
+
+      "image": "https://stc-zmp.zadn.vn/templates/zaui-coffee/dummy/product-square-3.webp",
+      "description": "There is a set of mock banners available here in three colours and in a range of standard banner sizes",
+      "create_date":"2024-9-01T00:00:00Z"
+    }
+  ]

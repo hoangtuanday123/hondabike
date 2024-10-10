@@ -1,0 +1,16 @@
+[
+    {
+        "id":1,
+        "name":"dịch vụ 1",
+        "price":100000,
+        "image": "https://stc-zmp.zadn.vn/templates/zaui-coffee/dummy/product-square-2.webp",
+        "detail":"mô tả"
+    },
+    {
+        "id":2,
+        "name":"dịch vụ 2",
+        "price":200000,
+        "image": "https://stc-zmp.zadn.vn/templates/zaui-coffee/dummy/product-square-2.webp",
+        "detail":"mô tả"
+    }
+]

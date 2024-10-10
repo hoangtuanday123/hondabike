@@ -8,7 +8,7 @@ import { ProductItemSkeleton } from "../../components/skeletons";
 
 export const BikeListContent: FC = () => {
   const bikes = useRecoilValue(bikesState);
-
+{/* <Section title="Danh sách sản phẩm"></Section> */}
   return (
     <Section title="Danh sách sản phẩm">
       <Box className="grid grid-cols-2 gap-4">

@@ -5,7 +5,8 @@ import { Welcome } from "./welcome";
 import { Banner } from "./banner";
 import { Categories } from "./categories";
 import { Recommend } from "./recommend";
-import { ProductList } from "./product-list";
+// import { ProductList } from "./product-list";
+import {NewsList} from "./news-list"
 import { Divider } from "../../components/divider";
 
 const HomePage: React.FunctionComponent = () => {
@@ -19,9 +20,10 @@ const HomePage: React.FunctionComponent = () => {
           <Categories />
         </Suspense>
         <Divider />
-        <Recommend />
-        <Divider />
-        <ProductList />
+        <NewsList/>
+        {/* <Recommend /> */}
+        {/* <Divider /> */}
+        {/* <ProductList /> */}
         <Divider />
       </Box>
     </Page>
