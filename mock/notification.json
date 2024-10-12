@@ -3,7 +3,7 @@
       "id": "1",
       "image": "./static/logo.png",
       "title": "Chào bạn mới",
-      "create_date":"2024-9-01T00:00:00Z",
+      "create_date":"2024-09-01T00:00:00Z",
       "description":
         "Cảm ơn đã sử dụng ZaUI Coffee, bạn có thể dùng ứng dụng này để tiết kiệm thời gian xây dựng"
     },
@@ -11,7 +11,7 @@
       "id": "2",
       "image": "./static/logo.png",
       "title": "Giảm 50% lần đầu mua hàng",
-      "create_date":"2024-9-01T00:00:00Z",
+      "create_date":"2024-09-01T00:00:00Z",
       "description": "Nhập WELCOME để được giảm 50% giá trị đơn hàng đầu tiên order"
     }
   ]

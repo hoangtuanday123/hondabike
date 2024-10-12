@@ -17,6 +17,8 @@ import NewPage from "../pages/news"
 import Bookingtime from "../pages/bookingtime"
 import BookingPage from "../pages/booking";
 import ServicePage from "../pages/service"
+import HistoryPage from "../pages/history"
+import InformationPage from "../pages/information";
 import { getSystemInfo } from "zmp-sdk";
 import { ScrollRestoration } from "./scroll-restoration";
 import { useHandlePayment } from "../hooks";
@@ -56,6 +58,8 @@ export const Layout: FC = () => {
           <Route path="/booking_time" element={<Bookingtime />}></Route>
           <Route path="/booking/branch" element={<BookingPage />}></Route>
           <Route path="/booking/branch/:id/services" element={<ServicePage />}></Route>
+          <Route path="/history" element={<HistoryPage />}></Route>
+          <Route path="/profile/information" element={<InformationPage />}></Route>
         </Routes>
       </Box>
       <Navigation />

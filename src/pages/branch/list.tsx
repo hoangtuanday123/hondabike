@@ -1,13 +1,13 @@
 import React, { FC } from "react";
 import { ListRenderer } from "../../components/list-renderer";
 import { useRecoilValue } from "recoil";
-import { branchState } from "../../state";
+import { BranchsState  } from "../../state";
 import { Box, Header, Page, Text } from "zmp-ui";
 import { Divider } from "../../components/divider";
 import { BranchPicker } from "../../components/branch/picker";
 import logo from "../../static/logo.png"
 export const BranchList: FC = () => {
-  const branchs = useRecoilValue(branchState);
+  const branchs = useRecoilValue(BranchsState );
   return (
     <Box className="bg-background">
       <ListRenderer

@@ -2,7 +2,7 @@ import { atom, selector, selectorFamily } from "recoil";
 import { getLocation, getPhoneNumber, getUserInfo } from "zmp-sdk";
 import logo from "./static/logo.png";
 import { Category } from "./types/category";
-import { Product, Variant,Bike,News,Service } from "./types/product";
+import { Product, Variant,Bike,News,Service,Bookingtime,Information } from "./types/product";
 import { Cart } from "./types/cart";
 import { Notification } from "./types/notification";
 import { calculateDistance } from "./utils/location";
@@ -15,7 +15,9 @@ import { wait } from "./utils/async";
 import categories from "../mock/categories.json";
 import promotions from "../mock/promotions.json";
 import notifications from "../mock/notification.json"
-
+import bookingtime from "../mock/history.json"
+import branch from "../mock/branch.json"
+import information from "../mock/information.json"
 export const userState = selector({
   key: "user",
   get: async () => {
@@ -47,6 +49,21 @@ export const NotificationsState = selector<Notification[]>({
   get: () => notifications,
 });
 
+export const BookingtimesState = selector<Bookingtime[]>({
+  key: "bookingtimes",
+  get: () =>  bookingtime.filter((bt) => bt.status === "Đã đặt lịch"),
+});
+
+export const HistoriesState = selector<Bookingtime[]>({
+  key: "histories",
+  get: () =>  bookingtime.filter((bt) => bt.status != "Đã đặt lịch"),
+});
+
+export const informationState = selector<Information[]>({
+  key: "informations",
+  get: () =>  information,
+});
+
 export const bikesState = selector<Bike[]>({
   key: "bikes",
   get: async () => {
@@ -65,13 +82,9 @@ export const newsState = selector<News[]>({
   },
 });
 
-export const branchState = selector<Branch[]>({
+export const BranchsState = selector<Branch[]>({
   key: "branchs",
-  get: async () => {
-    
-    const branchs = (await import("../mock/branch.json")).default;
-    return branchs
-  },
+  get: () => branch, // Assuming `branch` is defined properly in your state
 });
 
 export const serviceState = selector<Service[]>({
@@ -221,6 +234,8 @@ export const resultState = selector<Product[]>({
     );
   },
 });
+
+
 
 export const storesState = atom<Store[]>({
   key: "stores",

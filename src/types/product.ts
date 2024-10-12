@@ -79,3 +79,21 @@ export interface Service {
   image: string;
   detail: string;
 }
+export interface Bookingtime {
+  id: number;
+  service: string;
+  price: number;
+  image: string;
+  time: string;
+  status:string
+}
+
+export interface Information {
+  id: number;
+  fullname: string;
+  phone: string;
+  email: string;
+  dob: string;
+  sex:string
+}
+

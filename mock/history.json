@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "service":"dịch vụ 1",
+        "price":100000,
+        "image": "https://stc-zmp.zadn.vn/templates/zaui-coffee/dummy/product-square-2.webp",
+        "time":"2024-09-01T00:00:00Z",
+        "status":"Đã hoàn thành"
+    },
+    {
+        "id":1,
+        "service":"dịch vụ 2",
+        "price":200000,
+        "image": "https://stc-zmp.zadn.vn/templates/zaui-coffee/dummy/product-square-2.webp",
+        "time":"2024-09-01T00:00:00Z",
+        "status":"Đã hủy"
+    },
+    {
+        "id":1,
+        "service":"dịch vụ 3",
+        "price":300000,
+        "image": "https://stc-zmp.zadn.vn/templates/zaui-coffee/dummy/product-square-2.webp",
+        "time":"2024-09-01T00:00:00Z",
+        "status":"Đã đặt lịch"
+    }
+]

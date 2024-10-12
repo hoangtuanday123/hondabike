@@ -1,22 +1,23 @@
 import React, { FC, useState } from "react";
 import { createPortal } from "react-dom";
 import { Sheet } from "../../components/fullscreen-sheet";
-import { Box, Button, Text } from "zmp-ui";
+import { Box, Button, Text, List, Icon } from "zmp-ui";
 
-export interface Notification {
-  id: string;
-  title: string;
-  description: string;
-  create_date: string;
-  image: string;
-}
+export interface Bookingtime {
+    id: number;
+    service: string;
+    price: number;
+    image: string;
+    time: string;
+    status:string
+  }
 
-export interface NotificationPickerProps {
-  notification: Notification;
+export interface BookingtimePickerProps {
+  bookingtime: Bookingtime;
   children: (methods: { open: () => void; close: () => void }) => React.ReactNode;
 }
-
-export const NotificationPicker: FC<NotificationPickerProps> = ({ children, notification }) => {
+const { Item } = List;
+export const BookingtimePicker: FC<BookingtimePickerProps> = ({ children, bookingtime }) => {
   const [visible, setVisible] = useState(false);
 
   return (
@@ -27,22 +28,22 @@ export const NotificationPicker: FC<NotificationPickerProps> = ({ children, noti
       })}
       {createPortal(
         <Sheet visible={visible} onClose={() => setVisible(false)} autoHeight>
-          {notification && (
+          {bookingtime && (
             <Box className="space-y-6 mt-2" p={4}>
               <Box className="space-y-2">
-                <Text.Title>{notification.title}</Text.Title>
-                <Text>{notification.description}</Text>
-                
-                
+                <Text.Title>{bookingtime.service}</Text.Title>
+                <Text>Giá: {bookingtime.price.toLocaleString()} VNĐ</Text>
                 <Text>
-                  Ngày tạo: {new Date(notification.create_date).toLocaleDateString('vi-VN')}
+                  Ngày đặt: {new Date(bookingtime.time).toLocaleDateString('vi-VN')}
                 </Text>
+                <Text>Trạng thái:{bookingtime.status}</Text>
+                
               </Box>
               <Box className="space-y-5">
                 {/* <img src={notification.image} alt={notification.title} style={{ width: "100%", borderRadius: "8px" }} /> */}
-                {/* <Button variant="primary" type="highlight" fullWidth onClick={() => setVisible(false)}>
-                  Chọn
-                </Button> */}
+                <Button variant="primary" type="highlight" fullWidth onClick={() => setVisible(false)}>
+                  Hủy
+                </Button>
               </Box>
             </Box>
           )}
